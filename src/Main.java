@@ -27,6 +27,7 @@ public class Main {
     }
     public static int getNumber(String operand) {
         int result = 0;
+        
         for (int i = 0; i < operand.length(); i++) {
             if (operand.charAt(i) == 'I'){
                 if (i < operand.length()-1)
@@ -43,6 +44,7 @@ public class Main {
     }
     public static String getRome (int number){
         String result = "";
+        
         while (number >= 10) {
             if (number % 10 >= 0) {result += "X"; number -= 10;}
         }
@@ -56,6 +58,7 @@ public class Main {
     }
     public static String calc(String input) throws Exception {
         String result = "";
+        
         String symbol = getOperator(input);
         String[] operation = input.replaceAll("\\s","").split("\\" + symbol);
         if (operation.length != 2) throw new Exception("Калькулятор принимает 2 операнда!");
