@@ -12,14 +12,13 @@ public class Main {
         if (input.contains("-")) symbol += "-";
         if (input.contains("*")) symbol += "*";
         if (input.contains("/")) symbol += "/";
-
-        if ((symbol.length() != 1) || (input.indexOf(symbol) != input.lastIndexOf(symbol))) throw new Exception("Калькулятор принимает только 2 операнда и один оператор (+, -, *, /) между ними");
+        if ((symbol.length() != 1) || (input.indexOf(symbol) != input.lastIndexOf(symbol)))
+            throw new Exception("Калькулятор принимает только 2 операнда и один оператор (+, -, *, /) между ними");
         return symbol;
     }
     public static Boolean checkSystem(String[] input) throws Exception {
         if ((input[0].contains("I") || input[0].contains("V") || input[0].contains("X")))
-            if (input[1].contains("I") || input[1].contains("V") || input[1].contains("X"))
-                return true;
+            if (input[1].contains("I") || input[1].contains("V") || input[1].contains("X")) return true;
             else throw new Exception("Используются разные системы счисления!");
         else
             if (input[1].contains("I") || input[1].contains("V") || input[1].contains("X"))
